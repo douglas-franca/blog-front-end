@@ -1,0 +1,42 @@
+<div class="form-login">
+  <div class="container">
+    <div class="row row--larget justify-content-center padding-login">
+      <div class="col-md-7 col-lg-5">
+        <div class="wrap">
+          <div class="login-wrap p-4 p-md-5">
+            <div class="w-100">
+              <h3 class="mb-4 text-center">Register</h3>
+            </div>
+            <form ng-submit="submitRegister()" class="signin-form">
+              <div class="form-group mt-3">
+                <input type="text" name="name" ng-model="login.name" class="form-control"
+                required="">
+                <label class="form-control-placeholder" for="username">Name</label>
+              </div>
+
+              <div class="form-group mt-3">
+                <input type="text" name="email" ng-model="login.email" class="form-control"
+                required="">
+                <label class="form-control-placeholder" for="username">Email</label>
+              </div>
+              <div class="form-group mt-3">
+                <input type="password" 
+                       name="password" 
+                       ng-model="login.password"
+                       class="form-control" 
+                       required="">
+                <label class="form-control-placeholder" for="username">password</label>
+              </div>
+              <button type="submit" 
+                      class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+                Create
+              </button>
+              <p class="text-center">{{ message }}</p>
+            </form>
+            <a href="#/login" class="button-login-or-register">login account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

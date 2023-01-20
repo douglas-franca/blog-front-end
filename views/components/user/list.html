@@ -1,0 +1,34 @@
+<div class="post-item">
+
+  <div class="cards">
+    <div class="row">
+      <div class="col-2 align-icon-post">
+        <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-10">
+        <h2>{{ user.name }}</h2>
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <h4><strong>Email:</strong></h4>
+    <h4>{{ user.email }}</h4>
+    <div class="space-2"></div>
+  </div>
+  <select ng-model="myVar">
+    <option value="posts">Posts
+    <option value="comments">Comments
+  </select>
+  <div class="space-2"></div>
+  <div class="line"></div>
+</div>
+
+<div class="comment-item">
+  <div ng-switch="myVar">
+    <div ng-switch-when="posts">
+      <posts-list></posts-list>
+    </div>
+    <div ng-switch-when="comments">
+      <comment-list user-comment="true"></comment-list>
+    </div>
+  </div>
+</div>

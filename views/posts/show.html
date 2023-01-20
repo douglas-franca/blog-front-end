@@ -1,0 +1,39 @@
+<div class="post-item">
+  <div class="cards">
+    <div class="row">
+      <div class="col-2 align-icon-post-show">
+        <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+      </div>
+      <div class="col-9">
+        <a  class="title-posts">{{ post.title}}</a>
+        <p class="date">{{post.created_at | date : 'HH:mm dd/MM/yyyy'}}</p>
+      </div>
+      <div class="col-1">
+        <a ng-if="currentUserId == post.user_id" href="#/posts/{{ post.id }}/edit">Edit</a>
+      </div>
+    </div>
+    <div class="description">
+      <p>{{ post.description}}</p>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <div class="col-2">
+        <div ng-if="post.id">
+          <like-icon post-comment="post.id"></like-icon>
+        </div>
+      </div>
+      <div class="col-2">
+        <div ng-if="post.id">
+          <tag-icon post-comment="post.id"></tag-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div ng-if="post.id">
+    <comment-form post-id="post.id" callback="callbackAfterSaveComment()"></comment-form>
+    <comment-list post-id="post.id"></comment-list>
+  </div>
+  
+</div>

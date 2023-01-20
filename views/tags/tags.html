@@ -1,0 +1,21 @@
+<div class="post-item" ng-repeat="tag in tags">
+
+  <div class="cards">
+    <div class="row">
+      <div class="space-2"></div>
+      <div class="col-2 align-icon-post">
+        <i class="fa fa-tag fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-8">
+        <a href="#/tags/{{ tag.id }}" class="title-posts">{{ tag.name}}</a>
+        
+      </div>
+      <div class="col-2 direction-rtl">
+        <i class="fa fa-trash fa-2x cursor" ng-confirm-click="tines certezas?" ng-click="deleteTag(tag.id)"  aria-hidden="true"></i>
+               
+      </div>
+    </div>
+    <div class="space-2"></div>
+  </div>
+  <div class="line"></div>
+</div>

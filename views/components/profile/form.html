@@ -1,0 +1,94 @@
+<div class="form-login" ng-if="permissionProfile()">
+  <div class="container">
+    <div class="row row--larget justify-content-center">
+      <div>
+        <div class="login-wrap p-4 p-md-5">
+          <div class="w-100">
+            <h3 class="mb-4 text-center">Edit Profile</h3>
+          </div>
+          <!-- Edit name -->
+          <form ng-submit="submitName()" class="signin-form">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="form-group mt-3">
+                  <input type="text" name="name" ng-model="user.name" class="form-control" required="">
+                  <label class="form-control-placeholder" for="username">Name</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <button type="submit" class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+                  Save
+                </button>
+              </div>
+              {{ menssageN }}
+            </div>
+          </form>
+          <div class="space-2"></div>
+          <!-- Edit email -->
+          <form ng-submit="submitEmail()" class="signin-form">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="form-group mt-3">
+                  <input type="text" name="email" ng-model="user.email" class="form-control" required="">
+                  <label class="form-control-placeholder" for="username">Email</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <button type="submit" class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+                  Save
+                </button>
+              </div>
+              {{ menssageE }}
+            </div>
+          </form>
+          <div class="space-2"></div>
+          <!-- Edit senha -->
+          <form ng-submit="submitPassword()" class="signin-form">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <div class="form-group mt-3">
+                  <input type="password" name="password" ng-model="user.password" class="form-control" required="">
+                  <label class="form-control-placeholder" for="username">password</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <button type="submit" class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+                  Save
+                </button>
+              </div>
+              {{ menssageP }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-login" ng-if="notPermissionProfile()">
+  <div class="container">
+    <div class="row row--larget justify-content-center">
+      <div>
+        <div class="login-wrap p-4 p-md-5">
+          <div class="w-100">
+            <h3 class="mb-4 text-center">Insira sua senha</h3>
+          </div>
+          <!-- Edit name -->
+          <form ng-submit="loginEditProfie()" class="signin-form">
+            <div class="row align-items-center">
+                <div class="form-group mt-3">
+                  <input type="password" name="password" ng-model="user.password" class="form-control" required="">
+                  <label class="form-control-placeholder" for="username">password</label>
+                </div>
+                <button type="submit" class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+                  Enter
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

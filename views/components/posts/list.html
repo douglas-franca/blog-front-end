@@ -1,0 +1,48 @@
+<div class="timeline">
+  <div class="post-item" ng-repeat="post in posts">
+    <div class="cards cards-index">
+      <div class="row">
+        <div class="col-2 align-icon-post-show">
+          <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+        </div>
+        <div class="col-8 titles">
+          <a  class="title-posts">{{ post.title}}</a>
+          <p class="date">{{post.created_at | date : 'HH:mm dd/MM/yyyy'}}</p>
+        </div>
+        <div class="col-1">
+          <a ng-if="currentUserId == post.user_id" href="#/posts/{{ post.id }}/edit">
+            <i class="fa fa-pencil-square fa-2x cursor color-principal" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a ng-if="currentUserId == post.user_id" ng-click="deletePost(post)">
+            <i class="fa fa-trash fa-2x cursor color-principal" aria-hidden="true"></i>
+          </a>
+      </div>
+      </div>
+      <div class="space-2"></div>
+      <div class="row">
+        <div class="col-2">
+          <div ng-if="post.id">
+            <like-icon post-comment="post.id"></like-icon>
+          </div>
+        </div>
+        <div class="col-2">
+          <div ng-if="post.id">
+            <tag-icon post-comment="post.id"></tag-icon>
+          </div>
+        </div>
+        <div class="col-2">
+          <i class="fa fa-comment cursor" aria-hidden="true"></i>
+          {{ post.comment_count}}
+        </div>
+      </div>
+    </div>
+    <comment-form post-id="post.id"></comment-form>
+    <div class="line for-baixo"></div>
+  </div>
+</div>
+
+
+
+      

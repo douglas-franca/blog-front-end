@@ -1,0 +1,40 @@
+<div class="icon-dropdown">
+  <a ng-mouseover="listTags()">
+    <i class="fa fa-tags cursor" aria-hidden="true"></i>
+    {{ countTags}}
+  </a>
+    
+  
+
+  <div class="conteudo-dropdown">
+    <h6>Tags do Post</h6>
+    <div class="tags-content">
+      <div ng-repeat="tag in tagsPost" >
+        <div class="tagsPost">
+        {{ tag.name}}
+        </div>
+        <i class="fa fa-trash cursor" ng-click="removeTag(tag.id, postComment)" aria-hidden="true"></i>
+      </div>
+      
+    </div>
+
+    <input type="text" 
+               name="tag" 
+               ng-model="newTag" 
+               class="form-control"
+               placeholder="Tag"
+               required>
+
+    <div class="tags-content">
+      <div ng-repeat="tag in tags | filter:newTag">
+        <div class="tagNew cursor" ng-click="createTagPost(tag.id, postComment)">
+          {{ tag.name}}
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

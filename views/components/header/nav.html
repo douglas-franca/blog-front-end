@@ -1,0 +1,88 @@
+<div class="header">
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <div class="container container--nav-space">
+      <div class="row row--larget">
+        <div class="col-8">
+          <div class="teste">
+            <div class="espace">
+              <a class="navbar-brand" href="#/posts">Post</a>
+            </div>
+            <div class="espace">
+              <a class="navbar-brand" href="#/tags">Tags</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 navbar-inline">
+          <div class="row">
+            <div class="col-9">
+              <input class="form-control mr-sm-2 css-1n34ig8" 
+                 type="search"
+                 ng-model="searchTag"  
+                 placeholder="Search" 
+                 aria-label="Search">
+            </div>
+            <div class="col-3 display-icon">
+              <div class="dropdown">
+                <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                <div class="dropdown-content">
+                  <div class="list-user-profile">
+                    <div class="title-user-profile">Account</div>
+                    <strong>{{ currentUser.name }}</strong>
+                    <p class="email-profile">{{ currentUser.email }}</p>
+                  </div>
+                  <div class="line"></div>
+                  <div class="list-user-profile">
+                    <div class="title-user-profile">
+                      <a href="#/edit-profile">Edit Profile</a>
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="list-user-profile">
+                    <div class="title-user-profile">Logout</div>
+                    <a href="#" ng-click="logoff()" class="logout">
+                      <i class="fa fa-sign-out fa-lg"aria-hidden="true"></i>
+                    </a>
+                  </div>                         
+                </div>
+              </div>
+              
+            </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<div class="container">
+  <div class="posts">
+    <div class="row">
+      <div class="col-5">
+        <div class="menu-lateral">
+          <div class="topic">
+            <a href="#/posts/create" class="topic-a">Create Post</a>
+          </div>
+          <div class="topic">
+            <a href="#/tags/create" class="topic-a">Create Tag</a>
+          </div>
+          <div class="topic">
+            <a href="#/user" class="topic-a">My Account</a>
+          </div>
+          <div class="topic">
+            <a href="#/edit-profile" class="topic-a">Edit Profile</a>
+          </div>
+          <div class="topic">
+            <a href="" class="topic-a">Notification</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-7 border-timeline">
+         <div ng-view></div>
+      </div>
+    </div>
+  </div>
+</div>

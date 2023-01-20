@@ -1,0 +1,37 @@
+<div class="timeline">
+  <div ng-if="loading">Carregamento comentários</div>
+  <div class="post-item comment-item"
+       ng-repeat="comment in comments"
+       ng-if="!loading">
+    <div class="cards">
+      <div class="row">
+        <div class="col-2 align-icon-post-show-coment">
+          <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+        </div>
+        <div class="col-8 titles">
+          <a href="" class="title-posts">{{ comment.text}}</a>
+          <p class="date">{{ comment.created_at | date : 'HH:mm dd/MM/yyyy' }}</p>
+        </div>
+        <div class="col-1">
+          <a ng-if="currentUserId == comment.user_id" href="#/posts/{{ comment.post_id }}/comment/{{ comment.id}}">
+            <i class="fa fa-pencil-square fa-2x cursor color-principal" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="col-1">
+            <a ng-if="currentUserId == comment.user_id" ng-click="deleteComment(comment)">
+              <i class="fa fa-trash fa-2x cursor color-principal" aria-hidden="true"></i>
+            </a>
+        </div>
+      </div>
+      <div class="space-2"></div>
+      <div class="row">
+        <div class="col-2">
+          <div ng-if="comment.id">
+            <like-icon post-comment="comment"></like-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line for-baixo"></div>
+  </div>
+</div>

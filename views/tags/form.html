@@ -1,0 +1,13 @@
+<h3>{{ formType }} Tag</h3>
+
+<form ng-submit="save()" class="signin-form">
+  <div class="form-group mt-3">
+    <input type="text" name="name" ng-model="tag.name" class="form-control"
+    required="">
+    <label class="form-control-placeholder" for="username">Tag</label>
+  </div>
+  <button type="submit" 
+          class="form-control btn btn-primary btn-primary--custom rounded submit px-3">
+    Save
+  </button>
+</form>

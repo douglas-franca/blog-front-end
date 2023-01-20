@@ -1,0 +1,37 @@
+<div class="timeline">
+  <div class="post-item" ng-repeat="post in posts | filter:searchTag">
+    <div class="cards cards-index">
+      <div class="row">
+        <div class="col-2 align-icon-post">
+          <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="col-10">
+          <a href="#/posts/{{ post.id }}" class="title-posts">{{ post.title}}</a>
+        </div>
+      </div>
+      <div class="space-2"></div>
+      <div class="row">
+        <div class="col-2">
+          <div ng-if="post.id">
+            <like-icon post-comment="post.id"></like-icon>
+          </div>
+        </div>
+        <div class="col-2">
+          <div ng-if="post.id">
+            <tag-icon post-comment="post.id"></tag-icon>
+          </div>
+        </div>
+        <div class="col-2">
+          <i class="fa fa-comment cursor" aria-hidden="true"></i>
+          {{ post.comment_count}}
+        </div>
+      </div>
+    </div>
+    <comment-form post-id="post.id"></comment-form>
+    <div class="line for-baixo"></div>
+  </div>
+</div>
+
+
+
+      
